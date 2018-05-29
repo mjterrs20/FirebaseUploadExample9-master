@@ -11,19 +11,64 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login.Register">
-
+        <activity android:name=".Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.Login" />
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ImagesActivity" />
+        <activity
+            android:name=".login.Register"
+            android:label="Register" />
+        <activity
+            android:name=".login.Login"
+            android:label="Login" />
+        <activity
+            android:name=".Depan"
+            android:label="Daftar Hewan"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="Tambah Kurban">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Depan" />
+        </activity>
+        <activity
+            android:name=".kontak.Kontak"
+            android:label="Develover">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Depan" />
+            />
+        </activity>
+        <activity
+            android:name=".kontak.Tentang"
+            android:label="Info">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Depan" />
+        </activity>
+        <activity
+            android:name=".Keranjang"
+            android:label="KeranjangKu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Depan" />
+        </activity>
+        <activity
+            android:name=".Pesan"
+            android:label="Pesan"></activity>
+        <activity
+            android:name=".login.Logout"
+            android:label="Logout">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Depan" />
+            />
 
-
+        </activity>
     </application>
 
 </manifest>

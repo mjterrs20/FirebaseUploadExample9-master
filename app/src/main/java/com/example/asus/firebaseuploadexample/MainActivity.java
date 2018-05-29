@@ -33,8 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mButtonChooseImage;
     private Button mButtonUpload;
-    private TextView mTextViewShowUploads;
+    //private TextView mTextViewShowUploads;
     private EditText mEditTextFileName;
+    private EditText mEditTextFileHarga;
+    private EditText mEditTextFileDaerah;
+    private EditText getmEditTextFileDes;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
 
@@ -52,8 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
         mButtonChooseImage = findViewById(R.id.button_choose_image);
         mButtonUpload = findViewById(R.id.button_upload);
-        mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
+       // mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
         mEditTextFileName = findViewById(R.id.edit_text_file_name);
+        mEditTextFileHarga = findViewById (R.id.edit_text_file_harga);
+        mEditTextFileDaerah = findViewById (R.id.edit_text_file_daerah);
+        getmEditTextFileDes = findViewById ( R.id.edit_text_file_deskripsi );
         mImageView = findViewById(R.id.image_view);
         mProgressBar = findViewById(R.id.progress_bar);
 
@@ -78,12 +84,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
+        /*mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             openImagesActivity();
             }
         });
+        */
     }
 
     private void openFileChooser() {
@@ -130,7 +137,9 @@ public class MainActivity extends AppCompatActivity {
 
                             Toast.makeText(MainActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
                             Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),
-                                    taskSnapshot.getDownloadUrl().toString());
+                                    taskSnapshot.getDownloadUrl().toString(),mEditTextFileHarga.getText ().toString (),mEditTextFileDaerah.getText ().toString (),
+                                    getmEditTextFileDes.getText ().toString ());
+
                             String uploadId = mDatabaseRef.push().getKey();
                             mDatabaseRef.child(uploadId).setValue(upload);
                         }
@@ -148,12 +157,13 @@ public class MainActivity extends AppCompatActivity {
                             mProgressBar.setProgress((int) progress);
                         }
                     });
+            openImagesActivity ();
         } else {
             Toast.makeText(this, "No file selected", Toast.LENGTH_SHORT).show();
         }
     }
     private void openImagesActivity(){
-        Intent intent = new Intent(this, ImagesActivity.class);
+        Intent intent = new Intent(this, Depan.class);
         startActivity(intent);
     }
 }

@@ -23,14 +23,14 @@
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Edit your Email"/>
+            android:hint="Email"/>
 
         <EditText
             android:inputType="textPassword"
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Edit your Password"/>
+            android:hint="Password"/>
         <Button
             android:id="@+id/buttonRegister"
             android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
             android:id="@+id/textViewSignin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login lewat Sini"
+            android:text="Sudah punya akuan?Login"
             android:layout_gravity="center"/>
 
     </LinearLayout>

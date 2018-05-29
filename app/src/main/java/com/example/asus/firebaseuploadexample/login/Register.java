@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.asus.firebaseuploadexample.Depan;
 import com.example.asus.firebaseuploadexample.MainActivity;
 import com.example.asus.firebaseuploadexample.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,7 +39,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         firebaseAuth = FirebaseAuth.getInstance ();
         if (firebaseAuth.getCurrentUser () != null) {
             finish();
-            startActivity ( new Intent ( getApplicationContext (), MainActivity.class ));
+            startActivity ( new Intent ( getApplicationContext (), Depan.class ));
         }
         progressDialog = new ProgressDialog ( this );
 

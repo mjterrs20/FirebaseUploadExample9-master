@@ -35,7 +35,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position) {
         Upload uploadCurrent = mUploads.get(position);
-        holder.textViewName.setText(uploadCurrent.getName());
+        holder.textViewName.setText("Jenis Pertanian : "+uploadCurrent.getName());
+        holder.textViewHarga.setText("Modal Yang Diperlukan : "+uploadCurrent.getmHarga());
+        holder.textViewDaerah.setText("Daerah Tanam : "+uploadCurrent.getmDaerah());
+        holder.textViewDes.setText("Deskripsi : "+uploadCurrent.getmDes ());
         Picasso.with(mContext)
                 .load(uploadCurrent.getImageUrl())
                 .placeholder(R.mipmap.ic_launcher)
@@ -53,12 +56,17 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
         public TextView textViewName;
         public ImageView imageView;
+        public TextView textViewHarga;
+        public TextView textViewDaerah;
+        public TextView textViewDes;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
-
+            textViewDes =itemView.findViewById ( R.id.text_view_des );
             textViewName = itemView.findViewById(R.id.text_view_name);
             imageView = itemView.findViewById(R.id.image_view_upload);
+            textViewHarga = itemView.findViewById (R.id.text_view_harga);
+            textViewDaerah = itemView.findViewById (R.id.text_view_daerah);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
@@ -79,9 +87,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             menu.setHeaderTitle("Select Action");
             MenuItem doWhatever = menu.add(Menu.NONE, 1, 1, "Do whatever");
             MenuItem delete = menu.add(Menu.NONE, 2, 2, "Delete");
+            MenuItem pesan = menu.add(Menu.NONE,3,3,"Pesan");
 
             doWhatever.setOnMenuItemClickListener(this);
             delete.setOnMenuItemClickListener(this);
+            pesan.setOnMenuItemClickListener ( this );
         }
 
         @Override
@@ -97,6 +107,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                         case 2:
                             mListener.onDeleteClick(position);
                             return true;
+                        case 3:
+                            mListener.onKeranjang(position);
                     }
                 }
             }
@@ -110,6 +122,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         void onWhatEverClick(int position);
 
         void onDeleteClick(int position);
+
+        void onKeranjang(int position);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {

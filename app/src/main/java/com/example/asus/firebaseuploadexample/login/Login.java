@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.asus.firebaseuploadexample.MainActivity;
+import com.example.asus.firebaseuploadexample.Depan;
 import com.example.asus.firebaseuploadexample.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         firebaseAuth = FirebaseAuth.getInstance ();
         if (firebaseAuth.getCurrentUser () != null) {
             finish();
-            startActivity ( new Intent ( getApplicationContext (), MainActivity.class ));
+            startActivity ( new Intent ( getApplicationContext (), Depan.class ));
         }
         editTextEmail = (EditText) findViewById ( R.id.editTextEmail );
         editTextPassword = (EditText) findViewById ( R.id.editTextPassword );
@@ -75,7 +75,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                         if (task.isSuccessful ()){
                             // start profile activity
                             finish();
-                            startActivity ( new Intent ( getApplicationContext (), MainActivity.class ));
+                            startActivity ( new Intent ( getApplicationContext (), Depan.class ));
                         }
                     }
                 } );
