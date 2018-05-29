@@ -2,15 +2,28 @@ package com.example.asus.firebaseuploadexample;
 
 public class Pemesan {
 
+
     private String Name;
     private String Noktp;
     private String Jumlah;
     private String Norek;
+    private String Coba;
+
+
 
     public Pemesan(){
 
     }
+    public Pemesan (String coba){
+        this.Coba = coba;
+    }
+    public String getCoba() {
+        return Coba;
+    }
 
+    public void setCoba(String coba) {
+        Coba = coba;
+    }
     public Pemesan(String name, String noktp, String jumlah, String norek){
         this.Name = name;
         this.Noktp = noktp;

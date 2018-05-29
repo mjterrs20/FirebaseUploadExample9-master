@@ -215,6 +215,10 @@ public class Depan extends AppCompatActivity
            Intent i = new Intent(Depan.this, Logout.class);
            startActivity(i);
         }
+        else if (id == R.id.dagang) {
+            Intent i = new Intent(Depan.this, Daganganku.class);
+            startActivity(i);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

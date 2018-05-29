@@ -10,7 +10,7 @@
 
     </group>
 
-    <item android:title="MyFarms">
+    <item android:title="Kurbanku">
         <menu>
             <item
                 android:id="@+id/keranjang"
@@ -20,7 +20,11 @@
             <item
                 android:id="@+id/tambah"
                 android:icon="@drawable/ic_add_black_24dp"
-                android:title="Dagangganku" />
+                android:title="Ikut Jualan" />
+            <item
+                android:id="@+id/dagang"
+                android:icon="@drawable/ic_folder_black_24dp"
+                android:title="Daganganku" />
         </menu>
     </item>
 

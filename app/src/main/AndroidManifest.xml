@@ -59,7 +59,7 @@
         </activity>
         <activity
             android:name=".Pesan"
-            android:label="Pesan"></activity>
+            android:label="Pesan" />
         <activity
             android:name=".login.Logout"
             android:label="Logout">
@@ -67,8 +67,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Depan" />
             />
-
         </activity>
+        <activity android:name=".Daganganku"></activity>
     </application>
 
 </manifest>

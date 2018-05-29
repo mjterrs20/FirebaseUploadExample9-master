@@ -24,7 +24,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/myfarms"
+                android:src="@drawable/qur"
                 android:paddingBottom="16dp"
                 />
 
